@@ -1,13 +1,10 @@
 import React from 'react';
-import DisplayName from './DisplayName'
+import DisplayArray from './DisplayArray'
 
 
 const App = () => (
   <div>
-    <DisplayName
-      className={'App-display-name'}
-      firstName={'Krzysztof'}
-      lastName={'Stefanski'}
+    <DisplayArray listOfNames={['ala', 'ela', 'izabela']}
     />
   </div>
 )

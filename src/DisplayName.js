@@ -5,7 +5,7 @@ const DisplayName = (props) => (
     <h4>
 
 
-        Hello {props.firstName} {props.firstName}
+        Hello {props.firstName} {props.lastName}
         
 
     </h4>
