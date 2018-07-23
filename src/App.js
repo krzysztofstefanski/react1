@@ -1,10 +1,10 @@
 import React from 'react';
-import DisplayArray from './DisplayArray'
+import Border from './Border'
 
 
 const App = () => (
   <div>
-    <DisplayArray listOfNames={['ala', 'ela', 'izabela']}
+   <Border />
     />
   </div>
 )
