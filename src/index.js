@@ -11,6 +11,8 @@ import './index.css'
 //import my own componets
 import App from './App'
 
+
+//wywolanie funkcji
 ReactDOM.render(
 <App />,
  document.getElementById('root')
