@@ -1,13 +1,15 @@
 import React from 'react';
+import DisplayName from './DisplayName'
 
-import HelloWorld from './HelloWorld'
-import WhatReactRenders from './WhatReactRenders'
 
-const App = () =>(
-     <div>
-<HelloWorld />
-<WhatReactRenders />
-       </div>
-    )
+const App = () => (
+  <div>
+    <DisplayName
+      className={'App-display-name'}
+      firstName={'Krzysztof'}
+      lastName={'Stefanski'}
+    />
+  </div>
+)
 
-export default App;
+export default App

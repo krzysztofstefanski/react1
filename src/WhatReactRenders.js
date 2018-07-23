@@ -25,6 +25,14 @@ const WhatReactRenders = () => (
 {emptyArray}
 <br />
 {arrWithStrings}
+<br />
+{arrWithStrings[0]}{arrWithStrings[1]}{arrWithStrings[2]}
+
+<ul>
+{
+    arrWithStrings.map((string,index) => <li key={index}>{string}</li>)
+}
+    </ul>
 
     </div>
 )
