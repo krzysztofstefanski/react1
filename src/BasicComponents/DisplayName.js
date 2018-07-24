@@ -10,3 +10,4 @@ const DisplayName = (props) => (
 
     </h4>
 )
+export default DisplayName
