@@ -4,12 +4,12 @@ const styles = {
     border: '1px solid black'
     }
 
-const Border = (props) => (
+const Border = (props) => 
+( <div style={styles}>{props.children}
+    </div>
+)
 
   
 
-    <div style = {styles}>
-    Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum Lorem ipsum  Lorem ipsum  Lorem ipsum 
-    </div>
-)
+    
 export default Border
