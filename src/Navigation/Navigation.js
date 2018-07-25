@@ -5,7 +5,7 @@ import AppBar from 'material-ui/AppBar'
 class Navigation extends React.Component {
 
     state = {
-        isOpen: true
+        isOpen: false
     }
     toggleHandler = () => {
         this.setState({
@@ -17,8 +17,9 @@ class Navigation extends React.Component {
         return (
             <div>
                 <AppBar
-                    title={'JFDDL5 APP'}
-                    onClick={this.toggleHandler}
+                    title={'App messengers -0-0-'}
+                    onLeftIconButtonClick={this.toggleHandler}
+                    
                 />
 
                 <SideBar
