@@ -6,6 +6,7 @@ import BasicComponents from './BasicComponents'
 import Dashboard from './Dashboard'
 import PassingParameters from './PassingParameters'
 import SideBar from './SideBar'
+import Counter from './Counter'
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/basic-components'} component={BasicComponents} />
         <Route path={'/passing-parameters/:parameterName'} component={PassingParameters} />
+        <Route path={'/counter'} component={Counter} />
       </div>
     </Router>
   </div>
