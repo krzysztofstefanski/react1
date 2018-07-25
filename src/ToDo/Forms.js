@@ -1,13 +1,23 @@
 import React from 'react'
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
+
 import PaperRefined from '../components/PaperRefined'
 
 const Forms = (props) => (
     <PaperRefined>
-        <input
+        <TextField
             type={'text'}
             value={props.newTaskText}
+            fullWidth={true}
+            onChange={props.onNewTaskTextChanged}
         />
-        <button>Dodaj</button>
+        <RaisedButton
+            label={'Dodaj'}
+            primary={true}
+            fullWidth={true}
+            onClick={props.onAddNewTaskClickHandler}
+        />
     </PaperRefined>
 )
 
