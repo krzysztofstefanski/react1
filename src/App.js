@@ -22,7 +22,7 @@ const App = () => (
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/basic-components'} component={BasicComponents} />
         <Route path={'/passing-parameters/:parameterName'} component={PassingParameters} />
-        <Route path={'/counter'} component={Counter} />
+        <Route path={'/counter'} component={() => <Counter number={5} />} />
       </div>
     </Router>
   </div>
