@@ -1,37 +1,57 @@
 import React from 'react'
 
+import User from './User'
+import Search from './Search'
+import PaperRefined from '../../components/PaperRefined'
+
 class FetchingRandomUsers extends React.Component {
-
     state = {
-        randomUserData :null
+        randomUserData: null,
+        searchPhrase: ''
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fetch('https://randomuser.me/api?results=10')
-    .then (response => response.json())
-    .then (dataFromResponse => {
-        this.setState({
-            randomUserData: dataFromResponse.results
-        })
-    })
+            .then(response => response.json())
+            .then(dataFromReposnse => {
+                this.setState({
+                    randomUserData: dataFromReposnse.results
+                })
+            })
     }
 
-    render(){
-        return(
-<div>
-{
-this.state.randomUserData
-&&
-this.state.randomUserData
-.map(user => (
-<div
-key={user.loginuuid}
->
-{user.name.first}</div>
-))
-}
-</div>
+    searchPhraseChangeHandler = (event) => {
 
+        this.setState({
+            searchPhrase: event.target.value
+        })
+
+
+    }
+
+    render() {
+        return (
+            <div>
+                <PaperRefined>
+                    <Search
+                    krowa={}
+                    value={}
+                    />
+                </PaperRefined>
+                <PaperRefined>
+                    {
+                        this.state.randomUserData
+                        &&
+                        this.state.randomUserData
+                            .map(user => (
+                                <User
+                                    key={user.login.uuid}
+                                    user={user}
+                                />
+                            ))
+                    }
+                </PaperRefined>
+            </div>
         )
     }
 }
