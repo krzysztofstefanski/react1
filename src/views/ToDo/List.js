@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Task from './Task'
-import PaperRefined from '../components/PaperRefined'
+import PaperRefined from '../../components/PaperRefined'
 
 const List = (props) => (
     <PaperRefined>
