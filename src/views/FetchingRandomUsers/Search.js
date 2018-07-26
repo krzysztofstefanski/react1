@@ -3,13 +3,13 @@ import TextField from 'material-ui/TextField'
 
 const Search = (props) => (
     <div>
-        <TextField
+        <TextField 
             placeholder={'Search'}
             fullWidth={true}
-            onChange={props.krowa}
-            value={props.value}
+            onChange={props.searchPhraseChangeHandler}
+            value={props.searchPhrase}
         />
     </div>
-
 )
+
 export default Search

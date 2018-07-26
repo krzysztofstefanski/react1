@@ -1,8 +1,8 @@
 import React from 'react'
 
 import User from './User'
-import Search from './Search'
 import PaperRefined from '../../components/PaperRefined'
+import Search from './Search'
 
 class FetchingRandomUsers extends React.Component {
     state = {
@@ -21,35 +21,50 @@ class FetchingRandomUsers extends React.Component {
     }
 
     searchPhraseChangeHandler = (event) => {
-
         this.setState({
             searchPhrase: event.target.value
         })
-
-
     }
 
     render() {
+        const usersList = (
+            this.state.randomUserData
+            &&
+            this.state.randomUserData
+                .map(user => (
+                    <User
+                        key={user.login.uuid}
+                        user={user}
+                    />
+                ))
+        )
+
+        const searchResults = (
+            this.state.randomUserData
+            &&
+            this.state.randomUserData
+                .filter(user => user.name.first.indexOf(this.state.searchPhrase) !== -1)
+                .map(user => (
+                    <User
+                        key={user.login.uuid}
+                        user={user}
+                    />
+                ))
+        )
+
         return (
             <div>
                 <PaperRefined>
                     <Search
-                    krowa={}
-                    value={}
+                        searchPhraseChangeHandler={this.searchPhraseChangeHandler}
+                        searchPhrase={this.state.searchPhrase}
                     />
                 </PaperRefined>
                 <PaperRefined>
-                    {
-                        this.state.randomUserData
-                        &&
-                        this.state.randomUserData
-                            .map(user => (
-                                <User
-                                    key={user.login.uuid}
-                                    user={user}
-                                />
-                            ))
-                    }
+                    {searchResults}
+                </PaperRefined>
+                <PaperRefined>
+                    {usersList}
                 </PaperRefined>
             </div>
         )
