@@ -7,11 +7,11 @@ class FetchingRandomUsers extends React.Component {
     }
 
     componentDidMount(){
-        fetch('https://randomuser.me/api')
+        fetch('https://randomuser.me/api?results=10')
     .then (response => response.json())
     .then (dataFromResponse => {
         this.setState({
-            randomUserData: dataFromResponse
+            randomUserData: dataFromResponse.results
         })
     })
     }
@@ -19,9 +19,17 @@ class FetchingRandomUsers extends React.Component {
     render(){
         return(
 <div>
-{this.state.randomUserData !== null ? this.state.randomUserData.results[0].name.first + ' ' + this.state.randomUserData.results[0].name.last : ''  }
-
-
+{
+this.state.randomUserData
+&&
+this.state.randomUserData
+.map(user => (
+<div
+key={user.loginuuid}
+>
+{user.name.first}</div>
+))
+}
 </div>
 
         )
